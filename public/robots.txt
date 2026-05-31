@@ -1,0 +1,8 @@
+# Robots.txt file for HoaxLens AI
+# Designed to guide search engine crawlers
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of API endpoints
+Disallow: /api/

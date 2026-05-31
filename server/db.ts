@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { ClaimAnalysisResult, TrendingHoaxItem, AppUser, DashboardStats } from '../src/types';
 
-const DB_DIR = path.join(process.cwd(), 'data');
+const DB_DIR = process.env.VERCEL
+  ? '/tmp'
+  : path.join(process.cwd(), 'data');
 const DB_FILE = path.join(DB_DIR, 'db.json');
 
 interface DatabaseSchema {
@@ -355,7 +357,7 @@ class FileDatabase {
 
     // Compute active categories with elegant color tags
     const categories = ['Politics', 'Health', 'Technology', 'Finance', 'Education', 'Social Issues'];
-    const colors = ['#3B82F6', '#10B981', '#8B5CF6', '#F59E0B', '#6366F1', '#EC4899'];
+    const colors = ['#22c55e', '#16a34a', '#15803d', '#4ade80', '#86efac', '#bbf7d0'];
 
     const categoryDistribution = categories.map((cat, idx) => {
       const count = allChecks.filter(c => c.category === cat).length;

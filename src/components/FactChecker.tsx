@@ -219,12 +219,12 @@ export default function FactChecker({ result, onAnalyze, isLoading }: FactChecke
                 <div className="relative flex items-center justify-center h-28 w-28">
                   {/* Simulated circular progress */}
                   <svg className="absolute -rotate-90 transform" width="112" height="112">
-                    <circle cx="56" cy="56" r="48" stroke="#1e293b" strokeWidth="8" fill="transparent" />
+                    <circle cx="56" cy="56" r="48" stroke="#111111" strokeWidth="8" fill="transparent" />
                     <circle 
                       cx="56" 
                       cy="56" 
                       r="48" 
-                      stroke={result.credibilityScore > 60 ? '#10b981' : result.credibilityScore > 30 ? '#f59e0b' : '#f43f5e'} 
+                      stroke={result.credibilityScore > 50 ? '#22c55e' : '#ffffff'} 
                       strokeWidth="8" 
                       fill="transparent" 
                       strokeDasharray={301.6}

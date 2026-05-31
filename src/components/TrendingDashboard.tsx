@@ -137,16 +137,16 @@ export default function TrendingDashboard({ stats, trendingList, onTriggerCheck 
           <div className="h-64 sm:h-80 w-full text-xs font-mono">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={stats.weeklyTrends} margin={{ top: 10, right: 10, left: -20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
-                <XAxis dataKey="name" stroke="#64748b" />
-                <YAxis stroke="#64748b" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#111111" />
+                <XAxis dataKey="name" stroke="#888888" />
+                <YAxis stroke="#888888" />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#020617', borderColor: '#1e293b', borderRadius: '8px' }}
-                  labelStyle={{ color: '#94a3b8', fontWeight: 'bold' }}
+                  contentStyle={{ backgroundColor: '#000000', borderColor: '#22c55e', borderRadius: '8px' }}
+                  labelStyle={{ color: '#ffffff', fontWeight: 'bold' }}
                 />
                 <Legend iconType="circle" />
-                <Bar dataKey="checked" name="Audited Claims" fill="#3B82F6" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="hoaxes" name="Hoaxes flag" fill="#EC4899" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="checked" name="Audited Claims" fill="#22c55e" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="hoaxes" name="Hoaxes flag" fill="#ffffff" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -155,7 +155,7 @@ export default function TrendingDashboard({ stats, trendingList, onTriggerCheck 
         {/* Category Classification Pie Distribution */}
         <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-5 md:p-6 backdrop-blur-md flex flex-col justify-between">
           <h3 className="text-sm font-semibold text-slate-200 mb-4 flex items-center space-x-1.5">
-            <CheckCircle2 className="h-4 w-4 text-indigo-400" />
+            <CheckCircle2 className="h-4 w-4 text-emerald-400" />
             <span>Categorical Distribution</span>
           </h3>
 
@@ -169,14 +169,14 @@ export default function TrendingDashboard({ stats, trendingList, onTriggerCheck 
                   labelLine={false}
                   label={renderCustomizedLabel}
                   outerRadius={75}
-                  fill="#8884d8"
+                  fill="#22c55e"
                   dataKey="value"
                 >
                   {stats.categoryDistribution.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
                   ))}
                 </Pie>
-                <Tooltip contentStyle={{ backgroundColor: '#020617', borderColor: '#1e293b', borderRadius: '8px' }} />
+                <Tooltip contentStyle={{ backgroundColor: '#000000', borderColor: '#22c55e', borderRadius: '8px' }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
