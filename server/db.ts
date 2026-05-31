@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { ClaimAnalysisResult, TrendingHoaxItem, AppUser, DashboardStats } from '../src/types';
 
-const DB_DIR = path.join(process.cwd(), 'data');
+const DB_DIR = process.env.VERCEL
+  ? '/tmp'
+  : path.join(process.cwd(), 'data');
 const DB_FILE = path.join(DB_DIR, 'db.json');
 
 interface DatabaseSchema {
